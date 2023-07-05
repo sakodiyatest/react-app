@@ -23,6 +23,7 @@ import {
   IconCog,
   IconCurrencyDollar,
   IconHome,
+  IconLoading,
 } from '../../ui-kit/IconComponent';
 
 import type { EditProductForm, EditProductParams } from './types';
@@ -48,6 +49,7 @@ const EditProductDetail: React.FC = () => {
   const productState = useAppSelector(state => state.product);
   const appConfigState = useAppSelector(state => state.appConfig);
   const trlState = useAppSelector(state => state.trlList);
+  const editProductState = useAppSelector(state => state.editProduct);
 
   const dispatch = useAppDispatch();
 
@@ -169,9 +171,22 @@ const EditProductDetail: React.FC = () => {
               <button
                 onClick={submitForm}
                 type="button"
-                className="bg-primary-color py-2 px-4 text-white rounded-lg hover:opacity-90 text-sm"
+                disabled={editProductState.isLoading}
+                className="bg-primary-color min-h-[40px] px-4 text-white rounded-lg hover:opacity-90 text-sm flex items-center"
               >
-                Save
+                {editProductState.isLoading && (
+                  <IconLoading
+                    className='class="w-6 h-6 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"'
+                    strokeWidth={4}
+                  />
+                )}
+                <span
+                  className={`block ${
+                    editProductState.isLoading ? 'ms-2' : ''
+                  }`}
+                >
+                  Save
+                </span>
               </button>
             </div>
             <div className="lg:flex border-2 border-[#e5e7eb] bg-white rounded-md mb-5 w-full">
