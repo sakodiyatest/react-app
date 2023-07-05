@@ -3,7 +3,7 @@ export const ERRORS = {
   FIELD_REQUIRED: 'This field is required!',
   INVALID_URL: 'Invalid url',
   PAGE_NOT_FOUND: 'This Page is Not Found',
-  REQUEST_TIMEOUT: 'Request timeout, Please try Again!',
+  REQUEST_TIMEOUT: 'Request timeout, Please Reresh the page and try Again!',
 };
 
 export const SUCCESS = {
