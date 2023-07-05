@@ -14,6 +14,7 @@
 
 - Run command `npm i` to install all the required dependencies.
 - Run command `npm run start` to start the development server.
+- Run command `npm run test` to check the test cases.
 
 # Technicle side, we have used following as per the instructions:
 - ReactJS with Typescript.
@@ -22,3 +23,5 @@
 - Jodit-react package for implementing the functionality of WYSIWYG editor.
 - Eslint, prettier with husky configuration.
 
+# Notes
+- I have added .env only because I'm assuming it's a test task.  I am aware of the drawbacks of pushing an env file to Github.
